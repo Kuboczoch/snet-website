@@ -11,7 +11,8 @@ class App extends Component {
             height: window.innerHeight,
             colors: 4,
             baseColor: "#2040ae"
-        }
+        };
+        this.resize = this.resize.bind(this)
     }
 
     static shadeColor(color, percent) {
@@ -35,7 +36,7 @@ class App extends Component {
         return "#" + RR + GG + BB;
     }
 
-    componentDidMount() {
+    canvas() {
         let a = [];
         let n = Math.floor(Math.random() * this.state.colors);
         for (let i = 0; i < this.state.colors; i++) {
@@ -44,13 +45,30 @@ class App extends Component {
             if (n === this.state.colors)
                 n = 0;
         }
-        const canvas = Trianglify({
+        return Trianglify({
             width: this.state.width,
             height: this.state.height,
             cell_size: Math.random() * 200 + 40,
             x_colors: a
         });
-        document.getElementById('root').appendChild(canvas.canvas());
+    }
+
+    resize() {
+        this.setState({
+            width: window.innerWidth,
+            height: window.innerHeight
+        });
+        document.getElementsByTagName('svg')[0].append(this.canvas().svg())
+    };
+
+
+    componentDidMount() {
+        document.getElementById('root').appendChild(this.canvas().svg());
+        window.addEventListener('resize', this.resize);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.resize)
     }
 
     render() {
