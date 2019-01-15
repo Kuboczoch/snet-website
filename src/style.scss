@@ -76,3 +76,14 @@ html, body, #root {
 .text-higlight {
   animation: text-highlight 4s infinite;
 }
+
+.author {
+  bottom: 3px;
+  right: 10%;
+  position: absolute;
+
+  a {
+    color: #a9a9a933;
+    font-size: 0.6rem;
+  }
+}

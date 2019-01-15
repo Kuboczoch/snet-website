@@ -10,6 +10,7 @@ class Star extends Component {
                 <h1>SNET</h1>
                 <hr/>
                 <span><a className={"text-higlight"} href="http://starchasers.pl">Starchasers</a> network</span>
+                <span className="author"><a href="https://github.com/Kuboczoch">made by Kuboczoch</a></span>
             </div>
         );
     }
