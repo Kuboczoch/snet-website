@@ -39,7 +39,7 @@ class App extends Component {
         let a = [];
         let n = Math.floor(Math.random() * this.state.colors);
         for (let i = 0; i < this.state.colors; i++) {
-            a[n] = App.shadeColor(this.state.baseColor, i * -30);
+            a[n] = App.shadeColor(this.state.baseColor, i * -20);
             n++;
             if (n === this.state.colors)
                 n = 0;

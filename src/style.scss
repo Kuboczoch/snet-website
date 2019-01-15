@@ -52,4 +52,24 @@ html, body, #root {
   hr {
     margin: 20px 50px 30px 50px;
   }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@keyframes text-highlight {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #5467b2;
+  }
+  100% {
+    color: white;
+  }
+}
+
+.text-higlight {
+  animation: text-highlight 4s infinite;
 }
