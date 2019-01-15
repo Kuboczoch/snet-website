@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './style.scss';
 import Trianglify from 'trianglify';
+import Star from "./Star";
 
 class App extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class App extends Component {
             width: window.innerWidth,
             height: window.innerHeight,
             colors: 4,
-            baseColor: "#333032"
+            baseColor: "#2040ae"
         }
     }
 
@@ -38,7 +39,7 @@ class App extends Component {
         let a = [];
         let n = Math.floor(Math.random() * this.state.colors);
         for (let i = 0; i < this.state.colors; i++) {
-            a[n] = App.shadeColor(this.state.baseColor, i * 10);
+            a[n] = App.shadeColor(this.state.baseColor, i * -30);
             n++;
             if (n === this.state.colors)
                 n = 0;
@@ -55,7 +56,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-
+                <Star/>
             </div>
         );
     }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 html {
   background-color: #4c494b;
 }
@@ -5,6 +7,8 @@ html {
 canvas {
   position: absolute;
   z-index: 1;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 html, body, #root {
@@ -15,4 +19,37 @@ html, body, #root {
 .App {
   background-color: transparent;
   z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Roboto;
+  overflow: hidden;
+}
+
+.star {
+  position: relative;
+  top: -50px;
+  left: 0;
+  padding: 50px;
+  border-radius: 20px;
+  background-color: #121A27a1;
+  text-align: center;
+  box-shadow: 5px 3px 5px 0px black;
+  transition: 0.3s all;
+
+  &:hover {
+    top: -55px;
+    left: -5px;
+    box-shadow: 10px 8px 10px 0px black;
+  }
+
+  > img {
+    width: 300px;
+    height: 300px;
+  }
+
+  hr {
+    margin: 20px 50px 30px 50px;
+  }
 }
