@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './style.scss';
 import Trianglify from 'trianglify';
 import Star from "./Star";
-
 class App extends Component {
     constructor(props) {
         super(props);
@@ -65,6 +64,7 @@ class App extends Component {
     componentDidMount() {
         document.getElementById('root').appendChild(this.canvas().svg());
         window.addEventListener('resize', this.resize);
+        window.addEventListener('orientationchange', this.resize);
     }
 
     componentWillUnmount() {
